@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+	<select id="import-LBS_AP" partition="id" numExt="1">
+		<columns>ID,NAME,MAC,SIGN,DEV_MAC,NODE_ID,DATE_FORMAT(GATHER_TIME,'%Y-%c-%d %h:%i:%s') GATHER_TIME,
+		DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s') INSERT_TIME
+		</columns>
+		<table>LBS_AP</table>
+		<where></where>
+	</select>
+<!-- 	<select id="import-LBS_APP_ACCOUNT" partition="id" numExt="1">
+		<columns>
+			ID,SEC_MAC,WEIXIN_ACT,WEIXIN_PWD,FETION_ACT,FETION_PWD,
+			MOMO_ACT,MOMO_PWD,IAROUND_ACT,IAROUND_PWD,QQ_ACT,
+			QQ_PWD,BEETALK_ACT,BEETALK_PWD,MILIAO_ACT,MILIAO_PWD,COCO_ACT,COCO_PWD,
+		    DATE_FORMAT(CREATETIME,'%Y-%c-%d %h:%i:%s')CREATETIME,CREATEUSER,
+			DATE_FORMAT(MODIFYTIME,'%Y-%c-%d %h:%i:%s') MODIFYTIME,MODIFYUSER
+		</columns>
+		<table>LBS_APP_ACCOUNT</table>
+		<where></where>
+	</select>-->
+	<select id="import-LBS_APP_BEETALK" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,UNIQUE_ID,USER_ID,NICK_NAME,BIRTHDAY,
+			GENDER,DESCRIPTION,RELATION_SHIP,COVER,ICON_LONG,EXP,
+			BUZZ_STATE,VERSION,COLLECTIONMAC,
+			DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s')
+			COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_BEETALK</table>
+		<where></where>
+	</select> 
+	<select id="import-LBS_APP_COCO" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,DISTANCE,UID,NICKNAME,MOOD,NAME,SICON,
+			AGE,SEX,DATE_FORMAT(LASTONLINETIME,'%Y-%c-%d %h:%i:%s') 
+			LASTONLINETIME,COLLECTIONMAC,
+			DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s')
+			COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_COCO</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_APP_FETION" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,DISTANCE,DISTANCEINT,USER_LNG,USER_LAT,PRAISERCOUNTALL,
+			ISSHIELD,PRAISERCOUNTTODAY,ISPRAISEDTODAY,VISITORCOUNTALL,USERID,VISITORCOUNTTODAY,
+			GROUPCOUNT,ORIGINALURI,THUMBURI,SID,NICKNAME,SEX,CONSTELLATION,AGE,HOME,
+			USERREGION,SCHOOL,STUDENT_CLASS,BIRTH_MONTH,BIRTH_DAY,MOOD,PORTRAITURI,URI,COLLECTIONMAC,
+			DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s')COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,
+			DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_FETION</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_APP_IAROUND" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,DISTANCE,USER_LNG,USER_LAT,ICON,VIPLEVEL,OCCUPATION,NICKNAME,
+			USERID,DATE_FORMAT(LASTONLINETIME,'%Y-%c-%d %h:%i:%s') LASTONLINETIME,
+			PHOTONUM,AGE,SEX,SELFTEXT,NOTES,WEIBO,COLLECTIONMAC,
+			DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s') COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,
+			DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_IAROUND</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_APP_IAROUND_FOCUS" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,ICON,VIP,VIPLEVEL,NICKNAME,USERID,SEX,PHOTONUM,COLLECTIONMAC,
+			DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s') COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,
+			DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_IAROUND_FOCUS</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_APP_MOMO" partition="id" numExt="1">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,DISTANCE,DATE_FORMAT(TIMESEC,'%Y-%c-%d %h:%i:%s') TIMESEC,
+			LOCATION_UPDATED,VIP_LEVEL,CLIENT,DESCS,PIC,ACTIVE_LEVEL,NAME,AGE,SEX,CONSTELLATION,
+			GROUP_ROLE,SINA_USER_ID,SINA_VIP_DESC,INDUSTRY,VIDEO,DATE_FORMAT(LOC_TIMESEC,'%Y-%c-%d %h:%i:%s')
+			LOC_TIMESEC,MOMOID,RELATION,JOB,IS_HONGBAO,NEWYEARGO,PHOTOS,SIGN,RENREN_USER_ID,TENCENT_USER_ID,
+			TENCENT_USER_NAME,FB_USER_ID,TW_USER_ID,COLLECTIONMAC,DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s') 
+			COLLECTTIME,DEV_ID,NODE_ID,DATA_SOURCE,DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_MOMO</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_APP_WEIXIN" partition="id" numExt="10">
+		<columns>
+			ID,DEV_LNG,DEV_LAT,DISTANCE,UID,SEX,DESCS,UID_OTHER,NAME,PROVINCE,HEAD2,HEAD,CITY,
+			COUNTRY,COLLECTIONMAC,DATE_FORMAT(COLLECTTIME,'%Y-%c-%d %h:%i:%s') COLLECTTIME,
+			DEV_ID,NODE_ID,DATA_SOURCE,DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_APP_WEIXIN</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_MAC_CONNECT" partition="id" numExt="3">
+		<columns>
+			ID,DATE_FORMAT(GATHER_TIME,'%Y-%c-%d %h:%i:%s') GATHER_TIME,
+			MAC,DEV_MAC,SIGN,NODE_ID,DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s') INSERT_TIME
+		</columns>
+		<table>LBS_MAC_CONNECT</table>
+		<where></where>
+	</select>
+	<select id="import-LBS_TERMINAL_HIST" partition="id" numExt="1">
+		<columns>
+			ID,MAC,SSID,DEV_MAC,NODE_ID,DATE_FORMAT(GATHER_TIME,'%Y-%c-%d %h:%i:%s') GATHER_TIME,
+			DATE_FORMAT(INSERT_TIME,'%Y-%c-%d %h:%i:%s')INSERT_TIME
+		</columns>
+		<table>LBS_TERMINAL_HIST</table>
+		<where></where>
+	</select> 
+	
+</sql>
